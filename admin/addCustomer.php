@@ -15,12 +15,12 @@ $CustomerAvatar = $_POST['CustomerAvatar'];
 
 
 if (strlen($CustomerName) > 0 && strlen($CustomerEmail) > 0 && strlen($CustomerPassword) > 0) {
-    if($CustomerAvatar != "NO_IMAGE_ADD_STUDENT") {
+    if($CustomerAvatar != "NO_IMAGE_ADD_CUSTOMER") {
         $query = "INSERT INTO customer (CustomerId, CustomerName, CustomerPhone, CustomerAddress, CustomerEmail, CustomerIsVip, CustomerPassword, CustomerDOB, CustomerGender, CustomerAvatar) VALUES (null, '$CustomerName', '$CustomerPhone', '$CustomerAddress', '$CustomerEmail', '$CustomerIsVip', '$CustomerPassword', '$CustomerDOB', '$CustomerGender', '$CustomerAvatar')";
     }
     else{
         $query = "INSERT INTO customer (CustomerId, CustomerName, CustomerPhone, CustomerAddress, CustomerEmail, CustomerIsVip, CustomerPassword, CustomerDOB, CustomerGender) VALUES (null, '$CustomerName', '$CustomerPhone', '$CustomerAddress', '$CustomerEmail', '$CustomerIsVip', '$CustomerPassword', '$CustomerDOB', '$CustomerGender')";
-    }
+   }
     $data = mysqli_query($conn, $query);
     if ($data) {
         echo "ADD_CUSTOMER_SUCCESSFUL";
