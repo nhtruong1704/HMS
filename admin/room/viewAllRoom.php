@@ -2,7 +2,7 @@
 require "../connect.php";
 global $conn;
 
-class Room
+class viewRoom
 {
     function __construct($id, $name, $price, $des, $image)
     {
@@ -20,7 +20,7 @@ $query = "SELECT * FROM room";
 $data = mysqli_query($conn, $query);
 if ($data) {
     while ($row = mysqli_fetch_assoc($data)) {
-        $arrRooms[] = new Room(
+        $arrRooms[] = new viewRoom(
             $row['RoomId'],
             $row['RoomName'],
             $row['RoomPrice'],
