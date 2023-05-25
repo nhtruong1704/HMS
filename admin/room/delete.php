@@ -9,7 +9,7 @@ if(strlen($RoomId) > 0 && strlen($RoomImage) > 0) {
     $data = mysqli_query($conn, $query);
     if($data) {
         if($RoomImage != "NO_IMAGE_ROOM_UPDATE") {
-            unlink("images".$RoomImage);
+            unlink($RoomImage);
         }
         echo "ROOM_DELETED_SUCCESSFUL";
     }
