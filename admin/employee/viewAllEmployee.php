@@ -4,14 +4,14 @@ global $conn;
 
 class viewEmployee
 {
-    function __construct($id, $name, $position, $salary,$phone, $image)
+    function __construct($id, $name, $position, $salary,$phone, $avatar)
     {
         $this->EmployeeId = $id;
         $this->EmployeeName = $name;
         $this->EmployeePosition = $position;
         $this->EmployeeSalary = $salary;
         $this->EmployeePhone = $phone;
-        $this->EmployeeImage = $image;
+        $this->EmployeeAvatar = $avatar;
 
     }
 }
@@ -27,7 +27,7 @@ if ($data) {
             $row['EmployeePosition'],
             $row['EmployeeSalary'],
             $row['EmployeePhone'],
-            $row['EmployeeImage']
+            $row['EmployeeAvatar']
         );
     }
     if (count($arrEmployees) > 0) {

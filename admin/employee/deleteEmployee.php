@@ -3,13 +3,13 @@ require "../connect.php";
 global $conn;
 
 $EmployeeId = $_GET['EmployeeId'];
-$EmployeeImage = $_GET['EmployeeImage'];
-if(strlen($EmployeeId) > 0 && strlen($EmployeeImage) > 0) {
+$EmployeeAvatar = $_GET['EmployeeAvatar'];
+if(strlen($EmployeeId) > 0 && strlen($EmployeeAvatar) > 0) {
     $query = "DELETE FROM employee WHERE EmployeeId = '$EmployeeId'";
     $data = mysqli_query($conn, $query);
     if($data) {
-        if($EmployeeImage != "NO_IMAGE_EMPLOYEE_UPDATE") {
-            unlink("images".$EmployeeImage);
+        if($EmployeeAvatar != "NO_IMAGE_EMPLOYEE_UPDATE") {
+            unlink("images".$EmployeeAvatar);
         }
         echo "EMPLOYEE_DELETED_SUCCESSFUL";
     }
