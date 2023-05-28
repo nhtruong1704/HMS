@@ -21,7 +21,7 @@ $query = "SELECT * FROM employee";
 $data = mysqli_query($conn, $query);
 if ($data) {
     while ($row = mysqli_fetch_assoc($data)) {
-        $arrFoodItems[] = new viewEmployee(
+        $arrEmployees[] = new viewEmployee(
             $row['EmployeeId'],
             $row['EmployeeName'],
             $row['EmployeePosition'],
